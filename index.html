@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+  <br>
+  
+  <div class="menu">
+    <div class="p1Info">
+
+      <div id="p1Name">Player 1</div>
+      
+      <img 
+      id="p1" 
+      src="https://media1.giphy.com/media/HGQ4RWHYtw9Dmhj7mk/giphy.gif?cid=790b7611e15995a9d7b5e892400bb7f44e2e21996b3db397&rid=giphy.gif&ct=g"
+      />
+      
+      <div class="playerControls">
+
+        <div class="AttackDiv">
+          <h3>Q:</h3>
+          <button 
+            onclick = "player1.strike(player1, player2, player1.attackDmg)"  
+            id="attack"
+          >
+            Attack
+          </button>
+        </div>
+
+        <div class="HealDiv">
+          <h3>A:</h3>
+          <button 
+            onclick = "player1.heal(player1)" 
+            id="heal"
+          >
+            Heal
+          </button>
+          </div>
+      </div>
+      
+      <div  id="p1Health">100</div>
+    </div>
+
+      <button id="play">Simulate</button>
+
+    <div class="p2Info">
+
+      <div id="p2Name">Player 2</div>
+      
+      <img 
+        id="p2" 
+        src="https://d14eu5yur8w3te.cloudfront.net/api/v1/media/baseclub-media-uploads-production/21e2a462-a2a8-4351-85a6-2a457b2fdcfc.gif"
+      />
+      <div class="playerControls">
+        <div class="AttackDiv">
+          <h3>P:</h3>
+          <button 
+            onclick = "player2.strike(player2, player1, player2.attackDmg)"  
+            id="attack"
+          >
+            Attack
+          </button>
+        </div>
+        <div class="HealDiv">
+          <h3>L:</h3>          
+          <button 
+            onclick = "player2.heal(player2)" 
+            id="heal"
+          >
+            Heal
+          </button>
+        </div>
+      </div>
+      
+      <div id="p2Health">100</div>
+    </div>
+
+  </div>
+  <br>
+  
+  <div class="resultContainer">
+      <div id="result"></div>
+      <button id="reset" onclick="game.reset(p1,p2)">Reset</button>
+  </div>
+
+<audio id="p1attack" controls style="display:none">
+  <source src="sounds/killua-baka.mp3" type="audio/mpeg"> 
+</audio>
+<audio id="p1heal" controls style="display:none">
+  <source src="sounds/fastheal.mp3" type="audio/mpeg"> 
+</audio>
+<audio id="p2attack" controls style="display:none">
+  <source src="sounds/yoaimo-gojou.mp3" type="audio/mpeg"> 
+</audio>
+<audio id="p2heal" controls style="display:none">
+  <source src="sounds/quickheal.mp3" type="audio/mpeg"> 
+</audio>
+<audio id="victory" controls style="display:none">
+  <source src="sounds/victory.mp3" type="audio/mpeg"> 
+</audio>
+  <audio id="stimulate" controls style="display:none">
+  <source src="sounds/stimulate.mp3" type="audio/mpeg">  
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
