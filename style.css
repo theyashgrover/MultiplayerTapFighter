@@ -100,6 +100,9 @@ body {
   outline: none;
   cursor: pointer;
 }
+#attack:hover{
+  background-color: orange;
+}
 
 #heal {
   height: 30px;
@@ -109,6 +112,10 @@ body {
   background: #7DFFFF;
   outline: none;
   cursor: pointer;
+}
+
+#heal:hover{
+  background-color: blueviolet;
 }
 
 #play {
@@ -138,6 +145,10 @@ body {
   color: white;
   cursor: pointer;
 }
+#reset:hover{
+  background-color: rgb(232, 150, 61);
+border-radius: 30px;
+}
 
 .resultContainer {
     display: flex;
@@ -146,4 +157,10 @@ body {
   align-items: center;
   height:150px;
   width: 300px;
+}
+#play:hover{
+  font-weight: 40px;
+  border-radius: 100px;
+  color: black;
+  background-color: #377e37;
 }
