@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Multiplayer Game</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -27,20 +27,22 @@
         <div class="AttackDiv">
           <h3>Q:</h3>
           <button 
-            onclick = "player1.strike(player1, player2, player1.attackDmg)"  
+              
             id="attack"
+            class="attackButton1"
           >
-            Attack
+            ATTACK
           </button>
         </div>
 
         <div class="HealDiv">
           <h3>A:</h3>
           <button 
-            onclick = "player1.heal(player1)" 
+             
             id="heal"
+            class="healButton1"
           >
-            Heal
+            HEAL
           </button>
           </div>
       </div>
@@ -56,25 +58,27 @@
       
       <img 
         id="p2" 
-        src="https://d14eu5yur8w3te.cloudfront.net/api/v1/media/baseclub-media-uploads-production/21e2a462-a2a8-4351-85a6-2a457b2fdcfc.gif"
+        src="https://media.tenor.com/4IL8QJDz_GsAAAAi/gojo-dance-transparent-gojo.gif"
       />
       <div class="playerControls">
         <div class="AttackDiv">
           <h3>P:</h3>
           <button 
-            onclick = "player2.strike(player2, player1, player2.attackDmg)"  
+            
             id="attack"
+            class="attackButton2"
           >
-            Attack
+            ATTACK
           </button>
         </div>
         <div class="HealDiv">
           <h3>L:</h3>          
           <button 
-            onclick = "player2.heal(player2)" 
+            
             id="heal"
+            class="healButton2"
           >
-            Heal
+            HEAL
           </button>
         </div>
       </div>

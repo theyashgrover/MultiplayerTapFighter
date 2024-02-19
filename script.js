@@ -5,9 +5,12 @@ let p1NameDiv = document.getElementById('p1Name')
 let p2NameDiv = document.getElementById('p2Name')
 let p1HealthDiv = document.getElementById('p1Health')
 let p2HealthDiv = document.getElementById('p2Health')
+let attackButton1 = document.querySelector('.attackButton1')
+let attackButton2 = document.querySelector('.attackButton2')
+let healButton1 = document.querySelector('.healButton1')
+let healButton2 = document.querySelector('.healButton2')
 
 const updateGame = (p1,p2,gameState) => {
- 
   p1NameDiv.innerText = p1.name
   p2NameDiv.innerText = p2.name
   p1HealthDiv.innerText = p1.health
@@ -29,9 +32,9 @@ class Player {
   }
   
   strike (player, enemy, attackDmg) {
-   
     let damageAmount = Math.ceil(Math.random() * attackDmg) 
     enemy.health -= damageAmount
+    enemy.health = Math.max(0, enemy.health);
     updateGame(p1,p2,gameState)
     return `${player.name} attacks ${enemy.name} for ${damageAmount}`
   }
@@ -40,6 +43,7 @@ class Player {
     
     let hpAmount = Math.ceil(Math.random() * 5)
     player.health += hpAmount
+    player.health = Math.min(100, player.health);
     updateGame(p1,p2,gameState)
     
     return `${player.name} heals for ${hpAmount} HP!`
@@ -54,7 +58,7 @@ class Game {
   
   declareWinner(isOver,p1, p2) {
     let message
-   
+  
     if (isOver == true && p1.health <= 0) {
       message = `${p2.name} WINS!`;
     }
@@ -66,14 +70,17 @@ class Game {
     return message
   }
 
- 
   reset(p1,p2) {
     document.getElementById('stimulate').play();
     p1.health = 100
     p2.health = 100
     this.isOver = false
-    resultDiv.innerText = ''
+    resultDiv.innerText = 'Start!'
     updateGame(p1,p2)
+
+    setTimeout(() => {
+      resultDiv.innerText = '';
+    }, 3000);
   }
 
   play(p1, p2) {
@@ -112,8 +119,8 @@ document.addEventListener('keydown', function(e) {
 
 document.addEventListener('keydown', function(e) {
   if (e.key == "a" && p2.health > 0 ){
-   p1.heal(p1)
-   document.getElementById('p1heal').play();
+    p1.heal(p1)
+    document.getElementById('p1heal').play();
   }
 });
 
@@ -126,7 +133,35 @@ document.addEventListener('keydown', function(e) {
 
 document.addEventListener('keydown', function(e) {
   if (e.key == "l" && p2.health > 0 ){
-   player2.heal(p2)
+  player2.heal(p2)
   document.getElementById('p2heal').play();
   }
 });
+
+attackButton1.addEventListener('click', () => {
+  if(p2.health > 0 && game.isOver == false){
+    p1.strike(p1, p2, p1.attackDmg)
+    document.getElementById('p1attack').play();
+  }
+})
+
+attackButton2.addEventListener('click', () => {
+  if(p1.health > 0 && game.isOver == false){
+    p2.strike(p2, p1, p2.attackDmg)
+    document.getElementById('p2attack').play();
+  }
+})
+
+healButton1.addEventListener('click', () => {
+  if(p1.health > 0){
+    p1.heal(p1)
+    document.getElementById('p1heal').play();
+  }
+})
+
+healButton2.addEventListener('click', () => {
+  if(p2.health > 0){
+    p2.heal(p2)
+    document.getElementById('p2heal').play();
+  }
+})
