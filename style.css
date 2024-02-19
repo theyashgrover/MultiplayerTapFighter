@@ -10,6 +10,10 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'VT323', monospace;
+  background-image: url(https://www.pngall.com/wp-content/uploads/15/Anime-Speed-Lines-PNG-Photos.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
 }
 
 .menu {
@@ -31,7 +35,6 @@ body {
   align-items: center;
   height: 300px;
   width: 300px;
-/*   background: red; */
 }
 
 #p1Name {
@@ -55,7 +58,6 @@ body {
   align-items: center;
   height: 300px;
   width: 300px;
-/*   background: red; */
 }
 
 #p2Name {
@@ -79,6 +81,7 @@ body {
   justify-content: space-around;
   height: 40px;
   width: 100px;
+
 /*   background: blue; */
 }
 
@@ -94,32 +97,57 @@ body {
 #attack {
   height: 30px;
   width: 60px;
-  border-radius: 50px;
+  border-radius: 13px;
   border:none;
-  background: #FFFF01;
+  background: #FF0000;
   outline: none;
   cursor: pointer;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+}
+
+#attack:active {
+  background: #FF0000;
+  color: white;
+  transition: 0.5s;
 }
 
 #heal {
   height: 30px;
   width: 60px;
-  border-radius: 50px;
+  border-radius: 13px;
   border:none;
-  background: #7DFFFF;
+  background: #00FF00;
   outline: none;
   cursor: pointer;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+
+}
+
+#heal:active {
+  background: #00FF00;
+  color: white;
+  transition: 0.5s;
 }
 
 #play {
   height: 50px;
   width: 120px;
-  border-radius: 20px;
+  border-radius: 13px;
 /*   border:none; */
-  background: #02cf02;
+  background: #0356fb;
   outline: none;
   color: white;
   cursor: pointer;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+}
+
+#play:active {
+  background: #0037a6;
+  color: white;
+  transition: 0.5s;
 }
 
 #result {
@@ -128,15 +156,23 @@ body {
 }
 
 #reset {
-  margin-top: 20px;
+  margin-top: 13px;
   height: 50px;
   width: 100px;
-  border-radius: 20px;
+  border-radius: 13px;
+  font-size: 20px;
 /*   border:none; */
   background: #FF8800;
   outline: none;
   color: white;
   cursor: pointer;
+  font-family: 'VT323', monospace;
+}
+
+#reset:active {
+  background: #a65900;
+  color: white;
+  transition: 0.5s;
 }
 
 .resultContainer {
@@ -146,4 +182,14 @@ body {
   align-items: center;
   height:150px;
   width: 300px;
+}
+
+h3{
+  font-size: 30px;
+  color: #1c1c1c;
+}
+
+#p1Health,#p2Health{
+  background-color: #5c5c5c33;
+  border-radius: 10px;
 }
